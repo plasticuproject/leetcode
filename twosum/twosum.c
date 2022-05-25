@@ -15,7 +15,6 @@ int* twoSum(int* nums, int numsSize, int target, int* returnSize){
                 result[0] = i;
                 result[1] = j;
                 return result;
-
             }
         }
     }
@@ -39,7 +38,6 @@ int* twoSumHash(int* nums, int numsSize, int target, int* returnSize){
         else{
             key = (nums[i] & 0x7fffffff) % 10007;
             hashTable[key] = i;
-
         }
     }
     return result;
