@@ -6,7 +6,10 @@ from timeit import timeit
 
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
-        """someshit."""
+        """Given an array prices where prices[i] is the
+        price of a given stock on the ith day, returns
+        the maximum profit you can achieve from a
+        single transaction."""
         low = prices[0]
         high = low
         buy, sell, day = 1, 1, 1
