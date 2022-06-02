@@ -7,6 +7,8 @@
 
 
 int** transpose(int** matrix, int matrixSize, int* matrixColSize, int* returnSize, int** returnColumnSizes){
+    /* Given a 2D integer array matrix,
+     * returns the transpose of matrix. */
     *returnSize = *matrixColSize;
     *returnColumnSizes = malloc(*matrixColSize * sizeof(int));
     int** result = malloc(*matrixColSize * sizeof(int*));
