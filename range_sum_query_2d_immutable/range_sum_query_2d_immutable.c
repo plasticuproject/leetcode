@@ -12,7 +12,7 @@ typedef struct {
 NumMatrix* numMatrixCreate(int** matrix, int matrixSize, int* matrixColSize) {
     /* Pre-computes all matrix subset sums into subMatrices of
      * type NumMatrix. */
-    NumMatrix *subMatrices = malloc((matrixSize) * sizeof(NumMatrix));
+    NumMatrix *subMatrices = malloc(matrixSize * sizeof(NumMatrix));
     subMatrices->matrix = malloc((matrixSize + 1) * sizeof(int*));
     subMatrices->matrixSize = (matrixSize + 1);
     int i, j;
@@ -27,7 +27,6 @@ NumMatrix* numMatrixCreate(int** matrix, int matrixSize, int* matrixColSize) {
                     subMatrices->matrix[i - 1][j - 1] +
                     matrix[i - 1][j - 1]
                     );
-
         }
     }
     return subMatrices;
@@ -47,18 +46,15 @@ int numMatrixSumRegion(NumMatrix* obj, int row1, int col1, int row2, int col2) {
 void numMatrixFree(NumMatrix* obj) {
     /* Free memory allocated for NumMatrix object. */
     int i;
-    for(i = 0; i < obj->matrixSize; i++){
-        free(obj->matrix[i]);
-    }
+    for(i = 0; i < obj->matrixSize; i++){free(obj->matrix[i]);}
     free(obj->matrix);
     free(obj);
 }
 
-/**
+/*
  * Your NumMatrix struct will be instantiated and called as such:
  * NumMatrix* obj = numMatrixCreate(matrix, matrixSize, matrixColSize);
  * int param_1 = numMatrixSumRegion(obj, row1, col1, row2, col2);
-
  * numMatrixFree(obj);
 */
 
@@ -85,7 +81,6 @@ int main(void){
             printf("%d ", testMatrix->matrix[i][j]);
         }
     }
-    printf("\n %d\n", numMatrixSumRegion(testMatrix, 2, 1, 4, 3));
     */
 
     // assert [2, 1, 4, 3] == 8
