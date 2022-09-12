@@ -6,7 +6,7 @@
 #include "count_bits.c"
 #include "h_index.c"
 #include "letter_combinations.c"
-#include "max_product.c""
+#include "max_product.c"
 #include "max_subarray.c"
 #include "min_cost_connect_points.c"
 
