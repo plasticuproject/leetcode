@@ -1,4 +1,5 @@
 """test_max_area.py"""
+
 from typing import List
 from timeit import timeit
 from leetcode import max_area  # C extension
@@ -38,5 +39,6 @@ assert max_area([1, 1]) == 1
 X = timeit(lambda: native_max_area([1, 8, 6, 2, 5, 4, 8, 3, 7]),
            number=1000000)
 Y = timeit(lambda: max_area([1, 8, 6, 2, 5, 4, 8, 3, 7]), number=1000000)
+
 print("Native Code Time     :", X)
 print("C Extension Code Time:", Y)

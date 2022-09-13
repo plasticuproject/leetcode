@@ -61,6 +61,6 @@ _max_product(PyObject *self, PyObject *args)
             product = maxV;
         }
     }
-    Py_DECREF(nums);
+    Py_XDECREF(nums);
     return Py_BuildValue("i", product);
 }

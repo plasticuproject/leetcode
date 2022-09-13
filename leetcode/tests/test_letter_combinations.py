@@ -1,4 +1,5 @@
 """test_letter_combinations_of_a_phone_number.py"""
+
 from typing import List
 from timeit import timeit
 from leetcode import letter_combinations  # C Extension
@@ -52,5 +53,6 @@ assert letter_combinations("23") == [
 
 X = timeit(lambda: native_letter_combinations("23"), number=1000000)
 Y = timeit(lambda: letter_combinations("23"), number=1000000)
+
 print("Native Code Time     :", X)
 print("C Extension Code Time:", Y)

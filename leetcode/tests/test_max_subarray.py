@@ -1,4 +1,5 @@
 """test_max_subarray.py"""
+
 from typing import List
 from timeit import timeit
 from leetcode import max_subarray  # C Extension

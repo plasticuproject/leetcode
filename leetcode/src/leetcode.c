@@ -9,6 +9,8 @@
 #include "max_product.c"
 #include "max_subarray.c"
 #include "min_cost_connect_points.c"
+#include "find_min.c"
+#include "hamming_weight.c"
 
 
 static struct PyMethodDef methods[] = {
@@ -59,6 +61,18 @@ static struct PyMethodDef methods[] = {
         (PyCFunction)_min_cost_connect_points,
         METH_VARARGS,
         min_cost_connect_points_doc
+    },
+    {
+        "find_min",
+        (PyCFunction)_find_min,
+        METH_VARARGS,
+        find_min_doc
+    },
+    {
+        "hamming_weight",
+        (PyCFunction)_hamming_weight,
+        METH_VARARGS,
+        hamming_weight_doc
     },
     {NULL, NULL, 0, NULL}
 };

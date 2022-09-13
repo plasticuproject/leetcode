@@ -1,4 +1,5 @@
 """test_contains_duplicate.py"""
+
 from typing import List
 from timeit import timeit
 from leetcode import contains_duplicate  # C extension

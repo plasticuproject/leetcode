@@ -1,4 +1,5 @@
 """test_max_product.py"""
+
 from typing import List
 from timeit import timeit
 from leetcode import max_product  # C Extension
@@ -44,5 +45,6 @@ assert max_product([-2, -3, 7]) == 42
 
 X = timeit(lambda: native_max_product([2, 3, -2, 4]), number=1000000)
 Y = timeit(lambda: max_product([2, 3, -2, 4]), number=1000000)
+
 print("Native Code Time     :", X)
 print("C Extension Code Time:", Y)

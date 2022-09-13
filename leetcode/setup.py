@@ -32,6 +32,6 @@ setup(
     ],
     packages=["leetcode"],
     package_dir={"leetcode": "./stubs"},
-    package_data={"leetcode": ["__init__.pyi", "py.typed", "max_area.pyi"]},
+    package_data={"leetcode": ["__init__.pyi", "py.typed"]},
     cmdclass=cmdclass,
 )

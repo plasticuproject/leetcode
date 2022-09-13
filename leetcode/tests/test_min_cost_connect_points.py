@@ -1,4 +1,5 @@
 """test_min_cost_connect_points.py"""
+
 from typing import List, Dict, Tuple
 from timeit import timeit
 from leetcode import min_cost_connect_points  # C Extension
@@ -13,26 +14,27 @@ def native_min_cost_connect_points(points: List[List[int]]) -> int:
     result = 0
     MAX = 20000001
     dist = {}
+    j: Tuple[int, int]
     for i in range(len(points)):
         dist[points[i][0], points[i][1]] = MAX if i else 0
 
     while dist:
         temp_min = MAX
-        for i in dist:
-            if dist[i] < temp_min:
-                temp_min = dist[i]
-                x, y = i[0], i[1]
+        for j in dist:
+            if dist[j] < temp_min:
+                temp_min = dist[j]
+                x, y = j[0], j[1]
         result += dist.pop((x, y))
         # result += dist[(x, y)]
         # del dist[(x, y)]
-        for i in dist:
-            temp_min = (abs(x - i[0]) + abs(y - i[1]))
-            if temp_min < dist[i]:
-                dist[i] = temp_min
+        for j in dist:
+            temp_min = (abs(x - j[0]) + abs(y - j[1]))
+            if temp_min < dist[j]:
+                dist[j] = temp_min
     return result
 
 
-# #TESTS
+# # TESTS
 assert native_min_cost_connect_points([[0, 0], [2, 2], [3, 10], [5, 2],
                                        [7, 0]]) == 20
 
